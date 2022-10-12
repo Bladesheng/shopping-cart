@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Home";
 import Shop from "./Shop";
@@ -10,7 +10,7 @@ import Footer from "./Footer";
 
 export default function RouteSwitch() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header></Header>
 
       <Routes>
@@ -20,6 +20,6 @@ export default function RouteSwitch() {
       </Routes>
 
       <Footer></Footer>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
