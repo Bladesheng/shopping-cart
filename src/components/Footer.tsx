@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer>
       <span>Made by </span>
       <a href="https://github.com/Bladesheng">Bladesheng</a>
       <span> | </span>
