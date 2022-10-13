@@ -1,5 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  return <div className="app">Home page</div>;
+  let navigate = useNavigate();
+
+  return (
+    <div className="app">
+      <p>Welcome to the page</p>
+      <p>[text here]</p>
+      <button
+        onClick={() => {
+          navigate("/shop");
+        }}
+      >
+        To the shop!
+      </button>
+    </div>
+  );
 }
