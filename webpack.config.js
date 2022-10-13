@@ -46,7 +46,7 @@ module.exports = {
         type: "asset/resource",
         generator: {
           // put all generated assets into "dist/"
-          filename: "[name][ext]"
+          filename: "assets/[name][ext]"
         }
       }
     ]

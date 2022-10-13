@@ -5,7 +5,7 @@ export default function Home() {
   let navigate = useNavigate();
 
   return (
-    <div className="app">
+    <main>
       <p>Welcome to the page</p>
       <p>[text here]</p>
       <button
@@ -15,6 +15,6 @@ export default function Home() {
       >
         To the shop!
       </button>
-    </div>
+    </main>
   );
 }
