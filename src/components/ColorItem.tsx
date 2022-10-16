@@ -8,8 +8,8 @@ type IProps = {
 
 export default function ColorItem(props: IProps) {
   return (
-    <div className="colorItem">
-      <img src={props.colorPath} alt="" />
+    <li className="colorItem">
+      <img src={props.colorPath} alt={props.colorName + " circle"} />
       <p>{props.colorName + " circle"}</p>
       <p>$69.69</p>
       <button
@@ -19,6 +19,6 @@ export default function ColorItem(props: IProps) {
       >
         Add to cart
       </button>
-    </div>
+    </li>
   );
 }

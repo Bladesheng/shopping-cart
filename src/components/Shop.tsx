@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cart from "./Cart";
 import ColorItem from "./ColorItem";
+import CartQuantity from "./CartQuantity";
 
 import importImages from "../importImages";
 const circles = importImages();
@@ -43,11 +44,11 @@ export default function Shop() {
 
   return (
     <main>
-      <ul></ul>
-
-      <div>{colorsElements}</div>
-
       <Cart></Cart>
+
+      <CartQuantity cartContent={cartContent}></CartQuantity>
+
+      <ul>{colorsElements}</ul>
     </main>
   );
 }
