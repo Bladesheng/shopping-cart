@@ -25,6 +25,22 @@ export default function Shop() {
     setCartContent(cartContentCopy);
   }
 
+  function decrementItem(itemName: string) {
+    const cartContentCopy = structuredClone(cartContent);
+
+    if (cartContentCopy[itemName] === 1) return;
+
+    cartContentCopy[itemName] = cartContentCopy[itemName] - 1;
+
+    setCartContent(cartContentCopy);
+  }
+
+  function deleteItem(itemName: string) {
+    const cartContentCopy = structuredClone(cartContent);
+    delete cartContentCopy[itemName];
+    setCartContent(cartContentCopy);
+  }
+
   // for debugging
   useEffect(() => {
     console.log(cartContent);
@@ -45,7 +61,15 @@ export default function Shop() {
 
   return (
     <main>
-      <Cart cartVisible={cartVisible} setCartVisible={setCartVisible}></Cart>
+      <Cart
+        cartVisible={cartVisible}
+        setCartVisible={setCartVisible}
+        cartContent={cartContent}
+        addItem={addItem}
+        decrementItem={decrementItem}
+        deleteItem={deleteItem}
+        circlesPaths={circles}
+      ></Cart>
 
       <CartQuantity cartContent={cartContent} setCartVisible={setCartVisible}></CartQuantity>
 
