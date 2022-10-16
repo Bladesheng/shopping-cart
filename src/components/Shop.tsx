@@ -41,11 +41,6 @@ export default function Shop() {
     setCartContent(cartContentCopy);
   }
 
-  // for debugging
-  useEffect(() => {
-    console.log(cartContent);
-  });
-
   // create all color items
   const colorsElements = [] as JSX.Element[];
   for (const colorName in circles) {
@@ -73,7 +68,7 @@ export default function Shop() {
 
       <CartQuantity cartContent={cartContent} setCartVisible={setCartVisible}></CartQuantity>
 
-      <ul>{colorsElements}</ul>
+      <ul className="shopItems">{colorsElements}</ul>
     </main>
   );
 }

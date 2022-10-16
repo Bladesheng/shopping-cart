@@ -17,23 +17,7 @@ export default function Cart(props: IProps) {
       <li key={colorName}>
         <img src={props.circlesPaths[colorName]}></img>
         <p>{colorName}</p>
-        <button
-          className="decrement"
-          onClick={() => {
-            props.decrementItem(colorName);
-          }}
-        >
-          ⠀-⠀
-        </button>
-        <p className="ammount">{props.cartContent[colorName]}</p>
-        <button
-          className="increment"
-          onClick={() => {
-            props.addItem(colorName);
-          }}
-        >
-          ⠀+⠀
-        </button>
+
         <button
           className="delete"
           onClick={() => {
@@ -42,6 +26,26 @@ export default function Cart(props: IProps) {
         >
           Remove item
         </button>
+
+        <div className="ammountControls">
+          <button
+            className="decrement"
+            onClick={() => {
+              props.decrementItem(colorName);
+            }}
+          >
+            ⠀-⠀
+          </button>
+          <p className="ammount">{props.cartContent[colorName]}</p>
+          <button
+            className="increment"
+            onClick={() => {
+              props.addItem(colorName);
+            }}
+          >
+            ⠀+⠀
+          </button>
+        </div>
       </li>
     );
   }
@@ -59,7 +63,7 @@ export default function Cart(props: IProps) {
 
       <ul>{itemsElements}</ul>
 
-      <button>Checkout</button>
+      <button className="checkout">Checkout</button>
     </aside>
   );
 }

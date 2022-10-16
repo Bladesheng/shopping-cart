@@ -10,8 +10,8 @@ export default function ColorItem(props: IProps) {
   return (
     <li className="colorItem">
       <img src={props.colorPath} alt={props.colorName + " circle"} />
-      <p>{props.colorName + " circle"}</p>
-      <p>$69.69</p>
+      <p className="productName">{props.colorName + " circle"}</p>
+      <p className="productPrice">$69.69</p>
       <button
         onClick={() => {
           props.addItemCb(props.colorName);
