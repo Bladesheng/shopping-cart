@@ -8,6 +8,7 @@ const circles = importImages();
 
 export default function Shop() {
   const [cartContent, setCartContent] = useState<{ [colorName: string]: number }>({});
+  const [cartVisible, setCartVisible] = useState("hidden");
 
   function addItem(itemName: string) {
     const currentAmmount = cartContent[itemName];
@@ -44,9 +45,9 @@ export default function Shop() {
 
   return (
     <main>
-      <Cart></Cart>
+      <Cart cartVisible={cartVisible} setCartVisible={setCartVisible}></Cart>
 
-      <CartQuantity cartContent={cartContent}></CartQuantity>
+      <CartQuantity cartContent={cartContent} setCartVisible={setCartVisible}></CartQuantity>
 
       <ul>{colorsElements}</ul>
     </main>

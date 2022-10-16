@@ -2,6 +2,7 @@ import React from "react";
 
 type IProps = {
   cartContent: { [colorName: string]: number };
+  setCartVisible: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export default function CartQuantity(props: IProps) {
@@ -12,7 +13,12 @@ export default function CartQuantity(props: IProps) {
   }
 
   return (
-    <button>
+    <button
+      className="ammount"
+      onClick={() => {
+        props.setCartVisible("");
+      }}
+    >
       <svg viewBox="0 0 24 24">
         <path
           fill="currentColor"
